@@ -18,7 +18,6 @@ function getAllBoxes(req, res) {
   if (req.query.province) {
     query.province = req.query.province
   }
-  console.log("boxes");
   Box
     .find(query)
     .then(response => res.json(response))

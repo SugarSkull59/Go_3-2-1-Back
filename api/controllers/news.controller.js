@@ -5,6 +5,7 @@ const {
 
 module.exports = {
   getAllNoticias,
+  getNoticia
 }
 
 
@@ -16,5 +17,12 @@ function getAllNoticias(req, res) {
   News
     .find(query)
     .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+}
+
+function getNoticia(req, res) {
+  News
+    .findById(req.params.id)
+    .then(noticia => res.json(noticia))
     .catch((err) => handleError(err, res))
 }

@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 const {
   getAllBoxes,
-  getBox,
+  getBox
 } = require('../controllers/box.controller')
 
 router.get('/', getAllBoxes)
